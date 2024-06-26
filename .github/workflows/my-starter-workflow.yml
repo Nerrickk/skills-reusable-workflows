@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: call-reusable-workflow:
-         strategy:
-           matrix:
-             nodeversion: [14, 16, 18, 20]
-         uses: ./.github/workflows/reusable-workflow.yml
-         with:
-           node: ${{ matrix.nodeversion }}
+  call-reusable-workflow:
+    strategy:
+      matrix:
+        nodeversion: [14, 16, 18, 20]
+    uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      node: ${{ matrix.nodeversion }}
